@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="xxTimerScreenxx" id="iN0-l3-epB" customClass="TimerScreen" customModule="Time_Tracking_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="260"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZh-Ed-RAG" userLabel="lbl Timer">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="260"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ANZ-6g-dz2" userLabel="Stage 1">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="260"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Task Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xNP-d7-deB" userLabel="Title TextField">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="41"/>
+                            <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="41" id="Q02-g5-Vd5"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                        </textField>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zJI-sx-HD8" userLabel="Description TextView">
+                            <rect key="frame" x="0.0" y="56" width="300" height="150"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                        </textView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="xNP-d7-deB" secondAttribute="trailing" id="1Hq-yd-buS"/>
+                        <constraint firstItem="xNP-d7-deB" firstAttribute="leading" secondItem="ANZ-6g-dz2" secondAttribute="leading" id="7Df-sg-FgX"/>
+                        <constraint firstItem="zJI-sx-HD8" firstAttribute="leading" secondItem="ANZ-6g-dz2" secondAttribute="leading" id="K44-hq-MN8"/>
+                        <constraint firstItem="zJI-sx-HD8" firstAttribute="top" secondItem="xNP-d7-deB" secondAttribute="bottom" constant="15" id="KoR-tE-gCM"/>
+                        <constraint firstAttribute="bottom" secondItem="zJI-sx-HD8" secondAttribute="bottom" constant="54" id="YzX-hZ-ZL8"/>
+                        <constraint firstItem="xNP-d7-deB" firstAttribute="top" secondItem="ANZ-6g-dz2" secondAttribute="top" id="isV-uS-lS6"/>
+                        <constraint firstAttribute="trailing" secondItem="zJI-sx-HD8" secondAttribute="trailing" id="uMn-qD-YBF"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qc1-PF-FJz">
+                    <rect key="frame" x="0.0" y="221" width="300" height="39"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="39" id="ofq-nc-sLe"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                    <state key="normal" title="Start Timer">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="startTimerTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="LYR-uD-fIw"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="qc1-PF-FJz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="0Sg-Gz-ND6"/>
+                <constraint firstItem="qc1-PF-FJz" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="4rr-0V-KxE"/>
+                <constraint firstItem="ANZ-6g-dz2" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="7xZ-FX-tes"/>
+                <constraint firstItem="xZh-Ed-RAG" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Gy9-nW-rhp"/>
+                <constraint firstItem="qc1-PF-FJz" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="MPi-G8-sjs"/>
+                <constraint firstItem="ANZ-6g-dz2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="O6s-iD-Iai"/>
+                <constraint firstItem="ANZ-6g-dz2" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="f2T-iG-RPe"/>
+                <constraint firstItem="xZh-Ed-RAG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="mH9-0K-q0n"/>
+                <constraint firstItem="xZh-Ed-RAG" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="mYE-b6-lFz"/>
+                <constraint firstItem="ANZ-6g-dz2" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="rYo-bK-x3d"/>
+                <constraint firstItem="xZh-Ed-RAG" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="uKc-Sx-b2G"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="btnStartTimer" destination="qc1-PF-FJz" id="Wfa-JN-h7m"/>
+                <outlet property="lblStopWatch" destination="xZh-Ed-RAG" id="TbN-nn-ot7"/>
+                <outlet property="stageOne" destination="ANZ-6g-dz2" id="Ud0-DG-uec"/>
+                <outlet property="textViewDescription" destination="zJI-sx-HD8" id="WbF-ce-wxW"/>
+                <outlet property="txtField" destination="xNP-d7-deB" id="R0Y-l8-b7l"/>
+            </connections>
+            <point key="canvasLocation" x="10" y="258"/>
+        </view>
+    </objects>
+</document>
